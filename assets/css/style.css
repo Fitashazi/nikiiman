@@ -196,10 +196,19 @@ ul {
   margin-right: auto;
   line-height: 0;
 }
-.branding img {
+.branding__mark {
   display: block;
   height: clamp(2rem, 3.2vw, 2.75rem);
   width: auto;
+}
+.branding__mark--on-dark {
+  display: none;
+}
+[data-theme="dark"] .branding__mark--on-light {
+  display: none;
+}
+[data-theme="dark"] .branding__mark--on-dark {
+  display: block;
 }
 .site-header__actions {
   display: flex;
@@ -1932,7 +1941,7 @@ body.is-pick {
     --pad: 3.35rem;
     --header-pad: 0.7rem;
   }
-  .branding img {
+  .branding__mark {
     height: 1.85rem;
   }
   .pill-contact {

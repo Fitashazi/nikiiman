@@ -693,9 +693,12 @@ html.is-hero-cards .hero__labels {
   min-height: 0;
   box-sizing: border-box;
 }
+/* Band between hospitality labels and the beige/brown work section */
 .intro:not(.partner) {
   justify-content: center;
-  min-height: clamp(22rem, 52svh, 34rem);
+  align-items: center;
+  min-height: clamp(26rem, 60svh, 40rem);
+  padding-block: clamp(3rem, 4.5vw, 5rem);
 }
 .intro h2,
 .build h2,

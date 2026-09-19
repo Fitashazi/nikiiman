@@ -234,15 +234,15 @@ ul {
 }
 .nav-main {
   display: flex;
-  gap: var(--header-gap);
+  gap: 1.5rem;
 }
-/* Match Weichie header type: 1rem / 600 — Fustat ships 500+700 only, so 600 resolves to the 700 face */
+/* Top-bar type: compact medium (Fustat 500), smaller than body */
 .nav-main a,
 .pill-contact,
 .lang-switcher {
   font-family: var(--ff-body);
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 0.875rem;
+  font-weight: 500;
   letter-spacing: -0.02rem;
   line-height: 1.25;
   color: var(--clr-text);

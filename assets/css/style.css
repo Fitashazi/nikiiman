@@ -688,7 +688,8 @@ html.is-hero-cards .hero__labels {
   align-items: center;
   text-align: center;
   gap: clamp(1.25rem, 0.9375vw + 1.0625rem, 2rem);
-  padding-block: var(--pad);
+  padding-block: clamp(3.75rem, 2.5vw + 3rem, 5rem);
+  min-height: 0;
   box-sizing: border-box;
 }
 .intro h2,
@@ -705,24 +706,28 @@ html.is-hero-cards .hero__labels {
   text-wrap: pretty;
 }
 .intro p,
+.intro__lede,
 .intro p.reveal,
 .intro p.reveal.is-in,
 .lede,
 .build article p {
-  margin: 0 auto;
-  color: #12110b;
-  font-family: var(--ff-body);
-  font-weight: 500;
-  font-size: var(--fs-body-lg);
-  letter-spacing: -0.02em;
-  line-height: 1.6;
-  max-width: var(--container-sm);
+  margin: 0 auto !important;
+  color: #12110b !important;
+  font-family: "Fustat", system-ui, sans-serif !important;
+  font-weight: 500 !important;
+  font-size: clamp(1.125rem, 0.46875vw + 1.03125rem, 1.5rem) !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.6 !important;
+  max-width: 30.125rem !important;
   text-wrap: pretty;
+  opacity: 1 !important;
+  transform: none !important;
 }
 [data-theme="dark"] .intro p,
+[data-theme="dark"] .intro__lede,
 [data-theme="dark"] .intro p.reveal,
 [data-theme="dark"] .intro p.reveal.is-in {
-  color: #f4efea;
+  color: #f4efea !important;
 }
 .partner {
   background: var(--clr-off-white);

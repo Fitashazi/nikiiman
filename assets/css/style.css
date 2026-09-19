@@ -191,12 +191,15 @@ ul {
   opacity: 1;
 }
 .branding {
-  font-family: var(--ff-title);
-  font-size: clamp(1.75rem, 0.5vw + 1.65rem, 2.125rem);
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  line-height: 1;
+  display: flex;
+  align-items: center;
   margin-right: auto;
+  line-height: 0;
+}
+.branding img {
+  display: block;
+  height: clamp(2rem, 3.2vw, 2.75rem);
+  width: auto;
 }
 .site-header__actions {
   display: flex;
@@ -1929,8 +1932,8 @@ body.is-pick {
     --pad: 3.35rem;
     --header-pad: 0.7rem;
   }
-  .branding {
-    font-size: 1.55rem;
+  .branding img {
+    height: 1.85rem;
   }
   .pill-contact {
     display: none;

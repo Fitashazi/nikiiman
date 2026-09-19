@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>nikiiman — Coming Soon</title>
+    <meta name="description" content="nikiiman.com — coming soon." />
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/coming-soon.css" />
+    <style>
+      html {
+        background: #141517;
+      }
+      html:not(.is-ready):not(.is-booted)::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: 790;
+        background: #141517;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  </head>
+  <body data-page="home">
+    <!-- First page layout copied from portfolio home-header -->
+    <header class="home-header">
+      <div class="nav-bar once-in">
+        <img
+          class="brand-logo"
+          src="assets/img/nikiman-logo.png"
+          alt="Nikiman Insaat"
+        />
+      </div>
+
+      <div class="big-name once-in">
+        <div class="big-name__track" data-big-name>
+          <h1>
+            <span>Coming Soon</span><span class="dash">—</span>
+            <span aria-hidden="true">Coming Soon</span><span class="dash" aria-hidden="true">—</span>
+          </h1>
+        </div>
+      </div>
+    </header>
+
+    <script src="assets/js/coming-soon.js"></script>
+  </body>
+</html>

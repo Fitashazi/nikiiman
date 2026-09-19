@@ -4,17 +4,20 @@
   --clr-beige: #f4efea;
   --clr-light-beige: #fdf9f9;
   --clr-off-white: #fdf8f7;
+  --clr-glass: #f6f5f4;
   --clr-dark: #15140e;
   --clr-dark-raised: #26241b;
   --clr-bg: var(--clr-light-beige);
   --clr-text: var(--clr-black);
   --clr-muted: color-mix(in srgb, var(--clr-text) 55%, transparent);
   --clr-line: color-mix(in srgb, var(--clr-text) 12%, transparent);
-  --ff-title: "Fraunces", "Cormorant Garamond", serif;
-  --ff-body: "Fustat", "Manrope", sans-serif;
+  --ff-title: "Instrument Serif", "Times New Roman", serif;
+  --ff-body: "Fustat", system-ui, sans-serif;
+  --ff-button: "Fustat", system-ui, sans-serif;
   --fs-display: clamp(2.5rem, 9.375vw + 0.625rem, 10rem);
   --fs-xxl: clamp(2.25rem, 6.5625vw + 0.9375rem, 7.5rem);
   --fs-xl: clamp(1.875rem, 3.90625vw + 1.09375rem, 5rem);
+  --fs-l: clamp(1.625rem, 2.96875vw + 1.03125rem, 4rem);
   --fs-m: clamp(1.5rem, 1.875vw + 1.125rem, 3rem);
   --fs-s: clamp(1.375rem, 1.40625vw + 1.09375rem, 2.5rem);
   --fs-xs: clamp(1.25rem, 0.625vw + 1.125rem, 1.75rem);
@@ -23,6 +26,7 @@
   --fs-body-sm: clamp(1rem, 0.15625vw + 0.96875rem, 1.125rem);
   --fs-body-xs: clamp(0.875rem, 0.15625vw + 0.84375rem, 1rem);
   --pad: clamp(5rem, 3.125vw + 4.375rem, 7.5rem);
+  --pad-hero: 8.75rem;
   --pad-hero-sm: 4rem;
   --gutter: clamp(1.25rem, 4.6875vw + 0.3125rem, 5rem);
   --container-xl: 98rem;
@@ -31,7 +35,13 @@
   --container-sm: 30.125rem;
   --ease: cubic-bezier(0.19, 1, 0.22, 1);
   --header-pad: clamp(0.875rem, 0.78125vw + 0.71875rem, 1.5rem);
+  --header-gap: clamp(1.25rem, 0.9375vw + 1.0625rem, 2rem);
   --control: 3.125rem;
+  --radius-mini: 0.25rem;
+  --radius-small: 0.5rem;
+  --radius-medium: 0.75rem;
+  --radius-default: 1rem;
+  --radius-full: 62.4375rem;
 }
 
 [data-theme="dark"] {
@@ -40,11 +50,12 @@
   --clr-beige: var(--clr-dark-raised);
   --clr-light-beige: var(--clr-dark);
   --clr-off-white: #1c1b14;
+  --clr-glass: var(--clr-dark-raised);
 }
 
 html[lang="ru"] {
-  --ff-title: "Cormorant Garamond", "Fraunces", serif;
-  --ff-body: "Manrope", "Fustat", sans-serif;
+  --ff-title: "Instrument Serif", "Times New Roman", serif;
+  --ff-body: "Fustat", system-ui, sans-serif;
 }
 
 * {
@@ -120,7 +131,8 @@ body {
   background: var(--clr-bg);
   color: var(--clr-text);
   font-family: var(--ff-body);
-  font-size: 16px;
+  font-weight: 500;
+  font-size: var(--fs-body);
   line-height: 1.25;
   letter-spacing: -0.02em;
   overflow-x: clip;
@@ -213,11 +225,12 @@ ul {
 .site-header__actions {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: var(--header-gap);
 }
 .nav-main {
   display: flex;
-  gap: 2rem;
+  gap: var(--header-gap);
+  font-family: var(--ff-body);
   font-weight: 600;
   font-size: 1rem;
   letter-spacing: -0.02rem;
@@ -387,9 +400,9 @@ ul {
   text-align: center;
   font-family: var(--ff-title);
   font-size: var(--fs-xxl);
-  font-weight: 500;
-  letter-spacing: -0.03em;
-  line-height: 0.95;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 0.9;
   pointer-events: none;
   white-space: nowrap;
   display: flex;
@@ -674,27 +687,33 @@ html.is-hero-cards .hero__labels {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: clamp(1.25rem, 0.9375vw + 1.0625rem, 2rem);
+  gap: clamp(1rem, 1.25vw + 0.75rem, 2rem);
+  padding-block: var(--pad-hero) var(--pad);
 }
 .intro h2,
 .build h2,
 .studio h2 {
   margin: 0;
   font-family: var(--ff-title);
-  font-size: var(--fs-xl);
-  font-weight: 500;
+  font-size: var(--fs-xxl);
+  font-weight: 400;
   letter-spacing: -0.02em;
-  line-height: 1.05;
-  max-width: var(--container-sm);
+  line-height: 0.9;
+  max-width: var(--container-md);
+  text-wrap: pretty;
 }
 .intro p,
 .lede,
 .build article p {
-  margin: 0;
-  color: var(--clr-muted);
+  margin: 0 auto;
+  color: var(--clr-text);
+  font-family: var(--ff-body);
+  font-weight: 500;
   font-size: var(--fs-body-lg);
-  line-height: 1.6;
-  max-width: var(--container-sm);
+  letter-spacing: -0.02em;
+  line-height: 1.4;
+  max-width: 42.5rem;
+  text-wrap: pretty;
 }
 .partner {
   background: var(--clr-off-white);
@@ -716,10 +735,11 @@ html.is-hero-cards .hero__labels {
   text-align: center;
   font-family: var(--ff-title);
   font-size: var(--fs-display);
-  font-weight: 500;
-  letter-spacing: -0.03em;
-  line-height: 0.95;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 0.9;
   max-width: min(14ch, var(--container-lg));
+  text-wrap: pretty;
 }
 .work__showcase {
   position: relative;
@@ -850,7 +870,7 @@ html.is-hero-cards .hero__labels {
   margin: 0;
   font-family: var(--ff-title);
   font-size: var(--fs-xs);
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.25;
   letter-spacing: -0.02em;
   transition: transform 0.55s var(--ease);
@@ -915,7 +935,7 @@ html.is-hero-cards .hero__labels {
   margin: 0;
   font-family: var(--ff-title);
   font-size: var(--fs-m);
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: -0.02em;
   line-height: 1.05;
 }
@@ -945,7 +965,7 @@ html.is-hero-cards .hero__labels {
   margin: 0 0 0.75rem;
   font-family: var(--ff-title);
   font-size: clamp(1.5rem, 2vw, 2.1rem);
-  font-weight: 500;
+  font-weight: 400;
 }
 .sticky__content p,
 .sticky__content li {
@@ -1027,7 +1047,7 @@ html.is-hero-cards .hero__labels {
   margin: 0;
   font-family: var(--ff-title);
   font-size: var(--fs-display);
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: -0.03em;
   line-height: 0.95;
   max-width: 10ch;
@@ -1194,7 +1214,7 @@ html.is-hero-cards .hero__labels {
   margin: 0 0 1rem;
   font-family: var(--ff-title);
   font-size: clamp(1.5rem, 0.35vw + 1.42rem, 1.75rem);
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: -0.03em;
   line-height: 1.2;
 }
@@ -1252,7 +1272,7 @@ html.is-hero-cards .hero__labels {
   text-align: center;
   font-family: var(--ff-title);
   font-size: var(--fs-display);
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: -0.02em;
   line-height: 1;
   max-width: 12ch;
@@ -1566,7 +1586,7 @@ html.is-hero-cards .hero__labels {
   margin: 0 0 1rem;
   font-family: var(--ff-title);
   font-size: var(--fs-xxl);
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: -0.02em;
   line-height: 1;
 }
@@ -1674,7 +1694,7 @@ body.is-pick {
   margin: 0 0 1.25rem;
   font-family: var(--ff-title);
   font-size: var(--fs-xxl);
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: -0.02em;
   line-height: 1;
 }
@@ -2096,7 +2116,7 @@ body.is-page .case-page[hidden] {
   margin: 0;
   font-family: var(--ff-title);
   font-size: var(--fs-xxl);
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: -0.02em;
   line-height: 0.95;
 }
@@ -2126,7 +2146,7 @@ body.is-page .case-page[hidden] {
   margin: 0 0 0.85rem;
   font-family: var(--ff-title);
   font-size: var(--fs-s);
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .detail-grid p,
@@ -2174,7 +2194,7 @@ body.is-page .case-page[hidden] {
   margin: 0;
   font-family: var(--ff-title);
   font-size: var(--fs-xl);
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .studio-people {
@@ -2199,7 +2219,7 @@ body.is-page .case-page[hidden] {
   margin: 0.85rem 0 0.2rem;
   font-family: var(--ff-title);
   font-size: 1.5rem;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .studio-people p {

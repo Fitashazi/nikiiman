@@ -595,9 +595,12 @@ html.is-hero-cards .hero__stage {
   padding: 0 var(--gutter);
   margin: 0;
   list-style: none;
-  color: var(--clr-text);
+  font-family: var(--ff-body);
+  font-size: 0.875rem;
   font-weight: 500;
-  font-size: var(--fs-body-sm);
+  letter-spacing: -0.02rem;
+  line-height: 1.25;
+  color: var(--clr-text);
   position: relative;
   z-index: 2;
   flex: none;
@@ -2016,7 +2019,7 @@ body.is-pick {
   }
   .hero__labels {
     gap: 0.7rem 1.05rem;
-    font-size: 0.9rem;
+    font-size: 0.8125rem;
   }
   .work__grid {
     grid-template-columns: 1fr;

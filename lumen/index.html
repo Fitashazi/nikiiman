@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" data-root="./">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#fdf9f9" />
+    <title>LUMEN — Interiors atelier in Istanbul, Dubai &amp; Tehran</title>
+    <meta
+      name="description"
+      content="LUMEN is an interiors atelier for hospitality, wellness and private life. Studios in Istanbul, Dubai and Tehran."
+    />
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Fustat:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css?v=weichie9" />
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem("theme") === "dark") {
+            document.documentElement.setAttribute("data-theme", "dark");
+          }
+          if (localStorage.getItem("lang") === "tr" || localStorage.getItem("lang") === "ru") {
+            document.documentElement.lang = localStorage.getItem("lang");
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <div class="site-header__inner">
+        <a class="branding" href="./"><img class="branding__mark branding__mark--on-light" src="assets/img/nikiman-logo-dark.png" alt="Nikiman Insaat" /><img class="branding__mark branding__mark--on-dark" src="assets/img/nikiman-logo.png" alt="" aria-hidden="true" /></a>
+
+        <div class="site-header__actions" id="site-nav">
+          <nav class="nav-main">
+            <a href="work/">Work</a>
+            <a href="services.html">Services</a>
+            <a href="about.html">About</a>
+            <a class="nav-main__cta" href="contact.html">Get in touch</a>
+          </nav>
+          <a class="pill-contact" href="contact.html" data-magnetic>
+            <span data-i18n="cta">Get in touch</span>
+            <span class="pill-contact__icon" aria-hidden="true">
+              <svg width="17" height="24" viewBox="0 0 16.34 23.61" fill="none">
+                <path
+                  d="M3.99 11.18l.03-.79c0-1.36-.07-2.72-.21-4.07l-.08-.74c-.09-.88.52-1.68 1.39-1.82l.17-.03c.95-.16 1.83.52 1.93 1.48l.08.84c.13 1.29.19 2.58.19 3.87l.06.57c0 .03.04.03.04 0l.03-.03c.19-2.25.21-4.5.07-6.75l-.07-1.16C7.54 1.51 8.32.6 9.36.51c1.09-.1 2.04.73 2.1 1.82l.03.49c.15 2.72.06 5.45-.27 8.16l.33-1.28c.29-1.4.43-2.83.43-4.26 0-.9.71-1.64 1.61-1.67.91-.03 1.68.67 1.72 1.59l.04.89c.08 1.67-.49 4.6-.8 6.25l-.16.82"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M1 15.91c-.62.52-.66 1.5-.12 2.17l2.52 3.13c.59.73 1.67.81 2.35.17l.05-.05c.62-.58.69-1.55.14-2.21L3.14 16.12S2.09 15.01 1 15.91z"
+                  stroke="currentColor"
+                />
+                <path
+                  d="M12.18 15.47l-3.24.71c-.9.2-1.77-.41-1.9-1.33-.1-.79.4-1.54 1.18-1.73l2.35-.59c3.5-.88 6.45 2.78 4.79 5.99-.07.14-.15.27-.23.41l-.78 1.23c-.94 1.48-2.44 2.51-4.16 2.85-1.26.25-2.57.03-3.68-.6l-1.25-.7"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </span>
+          </a>
+        </div>
+
+        <div class="site-header__controls">
+          <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch theme">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="4" fill="currentColor" stroke="none" />
+              <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+            </svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" />
+            </svg>
+          </button>
+          <button class="lang-switcher" type="button" data-lang-toggle aria-label="Switch language">
+            <span class="lang-switcher__clip">
+              <span data-lang-current>EN</span>
+              <span data-lang-other>TR</span>
+            </span>
+          </button>
+          <button class="hamburger" id="menu-toggle" type="button" aria-label="Menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <h1 class="hero__title">
+          <span class="hero__title-line" data-i18n="hero1">Rooms for hospitality,</span>
+          <span class="hero__title-line" data-i18n="hero2">wellness, and</span>
+          <span class="hero__title-line" data-i18n="hero3">private life</span>
+        </h1>
+
+        <div class="hero__stage" id="heroStage" aria-label="Selected rooms">
+          <div class="hero__track" id="stage"></div>
+        </div>
+
+        <ul class="hero__labels" id="heroLabels"></ul>
+      </section>
+
+      <section class="intro" id="practice">
+        <h2 data-mask data-i18n="introTitle">Development partner</h2>
+        <p class="intro__lede" data-i18n="introBody">
+          We craft interiors for hospitality, wellness and private life — rooms that help you speak with guests through material, light and arrival.
+        </p>
+      </section>
+
+      <section class="work" id="work">
+        <h2 data-mask data-i18n="workTitle">Some of our latest work</h2>
+        <div class="work__showcase">
+          <p class="work__aside callout reveal" style="--stagger: 1">
+            <span class="callout__icon" aria-hidden="true">
+              <svg viewBox="0 0 36 36" fill="none">
+                <path d="M7.5 16.2 18 7l10.5 9.2V29H7.5V16.2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                <path d="M14.5 29v-8h7v8" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span data-i18n="workAside">Making sure every room is one you remember entering.</span>
+          </p>
+          <ul class="work__grid" id="workGrid"></ul>
+          <p class="work__cta reveal">
+            <a class="btn btn--fill" href="work/" data-magnetic>
+              <span data-i18n="workAll">View all work</span>
+              <span class="btn__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M4 10h12m0 0-4.5-4.5M16 10l-4.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+          </p>
+        </div>
+      </section>
+
+      <section class="sticky" id="services">
+        <div class="sticky__head">
+          <p class="sticky__eyebrow reveal" data-i18n="stickyEyebrow">Interiors atelier in Istanbul, Dubai &amp; Tehran.</p>
+          <h2 data-mask data-i18n="stickyTitle">We build rooms your guests live in.</h2>
+        </div>
+        <div class="sticky__content" id="stickyContent"></div>
+      </section>
+
+      <section class="intro partner" id="about">
+        <h2 data-mask data-i18n="partnerTitle">The partner you call</h2>
+        <p class="reveal" data-i18n="partnerBody" style="--stagger: 1">
+          We work with people whose rooms have to work properly: hotels, athletic clubs, and private houses. From Istanbul, Dubai and Tehran, we build for the long term.
+        </p>
+        <a class="pill-contact intro__pill reveal" href="contact.html" data-magnetic style="--stagger: 2">
+          <span data-i18n="partnerCta">Let's talk</span>
+          <span class="pill-contact__icon" aria-hidden="true">
+            <svg width="17" height="24" viewBox="0 0 16.34 23.61" fill="none">
+              <path d="M3.99 11.18l.03-.79c0-1.36-.07-2.72-.21-4.07l-.08-.74c-.09-.88.52-1.68 1.39-1.82l.17-.03c.95-.16 1.83.52 1.93 1.48l.08.84c.13 1.29.19 2.58.19 3.87l.06.57c0 .03.04.03.04 0l.03-.03c.19-2.25.21-4.5.07-6.75l-.07-1.16C7.54 1.51 8.32.6 9.36.51c1.09-.1 2.04.73 2.1 1.82l.03.49c.15 2.72.06 5.45-.27 8.16l.33-1.28c.29-1.4.43-2.83.43-4.26 0-.9.71-1.64 1.61-1.67.91-.03 1.68.67 1.72 1.59l.04.89c.08 1.67-.49 4.6-.8 6.25l-.16.82" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M1 15.91c-.62.52-.66 1.5-.12 2.17l2.52 3.13c.59.73 1.67.81 2.35.17l.05-.05c.62-.58.69-1.55.14-2.21L3.14 16.12S2.09 15.01 1 15.91z" stroke="currentColor"/>
+              <path d="M12.18 15.47l-3.24.71c-.9.2-1.77-.41-1.9-1.33-.1-.79.4-1.54 1.18-1.73l2.35-.59c3.5-.88 6.45 2.78 4.79 5.99-.07.14-.15.27-.23.41l-.78 1.23c-.94 1.48-2.44 2.51-4.16 2.85-1.26.25-2.57.03-3.68-.6l-1.25-.7" stroke="currentColor" stroke-linecap="round"/>
+            </svg>
+          </span>
+        </a>
+      </section>
+
+      <section class="contact" id="contact">
+        <h2 data-mask data-i18n="needTitle">Tell us what you need.</h2>
+        <form class="need reveal" id="briefForm" style="--stagger: 1">
+          <div class="need__lead">
+            <span class="need__prefix" data-i18n="needPrefix">I need a</span>
+            <div class="need__pills" data-need-pills></div>
+            <button class="need__add" type="button" data-need-add aria-label="Add a room type">
+              <span aria-hidden="true">+</span>
+            </button>
+          </div>
+          <button class="need__next" type="submit" data-magnetic>
+            <span data-i18n="needNext">Next</span>
+            <span aria-hidden="true">→</span>
+          </button>
+        </form>
+        <div class="tech-grid" data-tech-grid></div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <div class="foot__grid reveal">
+        <p class="foot__blurb" data-i18n="footBlurb">LUMEN is an interiors atelier in Istanbul, Dubai and Tehran.</p>
+        <div class="foot__col">
+          <h4 data-i18n="footStudio">Studio</h4>
+          <a href="work/">Work</a>
+          <a href="about.html">About</a>
+        </div>
+        <div class="foot__col">
+          <h4 data-i18n="footExpertises">Expertises</h4>
+          <a href="services.html">Hospitality</a>
+          <a href="services.html">Wellness</a>
+          <a href="services.html">Private water</a>
+        </div>
+        <div class="foot__col">
+          <h4 data-i18n="footLegal">Legal</h4>
+          <span data-i18n="privacy">Privacy</span>
+          <span data-i18n="imprint">Imprint</span>
+        </div>
+        <div class="foot__col">
+          <h4 data-i18n="footBiz">Business inquiries</h4>
+          <a class="foot__mail" href="mailto:studio@lumen-atelier.com">studio@lumen-atelier.com</a>
+        </div>
+      </div>
+    </footer>
+
+    <section class="pick" id="pick" hidden>
+      <form class="need reveal" id="pickForm">
+        <div class="need__lead">
+          <span class="need__prefix" data-i18n="needPrefix">I need a</span>
+          <div class="need__pills" data-need-pills></div>
+          <button class="need__add" type="button" data-need-add aria-label="Add a room type">
+            <span aria-hidden="true">+</span>
+          </button>
+        </div>
+        <button class="need__next" type="submit" data-magnetic>
+          <span data-i18n="needNext">Next</span>
+          <span aria-hidden="true">→</span>
+        </button>
+      </form>
+      <div class="tech-grid" data-tech-grid></div>
+    </section>
+
+    <section class="touch" id="touch" hidden>
+      <div class="touch__grid">
+        <div class="touch__intro">
+          <h1 data-mask data-i18n="touchTitle">Contact us.</h1>
+          <p data-i18n-html="touchBody">
+            Interested in working together? So are we! Simply fill out the form on this page to start the conversation. Already have a project brief? Please send your RFP directly to
+            <a href="mailto:studio@lumen-atelier.com">studio@lumen-atelier.com</a>
+          </p>
+        </div>
+        <form class="touch-form" id="touchForm">
+          <label>
+            <span><span data-i18n="fieldName">Name</span><em>*</em></span>
+            <input type="text" name="name" required autocomplete="name" />
+          </label>
+          <label>
+            <span><span data-i18n="fieldCompany">Company</span><em>*</em></span>
+            <input type="text" name="company" required autocomplete="organization" />
+          </label>
+          <label>
+            <span><span data-i18n="fieldEmail">Email</span><em>*</em></span>
+            <input type="email" name="email" required autocomplete="email" />
+          </label>
+          <label>
+            <span data-i18n="fieldPhone">Phone</span>
+            <input type="tel" name="phone" autocomplete="tel" />
+          </label>
+          <label class="touch-form__message">
+            <span><span data-i18n="fieldMessage">Message</span><em>*</em></span>
+            <textarea name="message" required maxlength="600" id="touchMessage"></textarea>
+            <small id="touchCount">0 of 600 max characters</small>
+          </label>
+          <label class="touch-form__check">
+            <input type="checkbox" name="privacy" required />
+            <span data-i18n-html="fieldPrivacy">I agree to the <a href="#privacy">privacy policy</a>.<em>*</em></span>
+          </label>
+          <button class="touch-form__send" type="submit">
+            <span data-i18n="fieldSend">Send message</span>
+            <span aria-hidden="true">→</span>
+          </button>
+          <p class="form-ok" id="touchOk" hidden data-i18n="needOk">Your mail client should open with the brief.</p>
+        </form>
+      </div>
+    </section>
+
+    <article class="case" id="case" hidden>
+      <button class="back" type="button" data-close data-i18n="back">← Back to all work</button>
+      <header class="case__head">
+        <h1 data-c-title></h1>
+        <p data-c-info></p>
+        <dl>
+          <div>
+            <dt data-i18n="type">Type</dt>
+            <dd data-c-type></dd>
+          </div>
+          <div>
+            <dt data-i18n="place">Place</dt>
+            <dd data-c-loc></dd>
+          </div>
+          <div>
+            <dt data-i18n="year">Year</dt>
+            <dd data-c-year></dd>
+          </div>
+        </dl>
+      </header>
+      <div class="case__photos" id="casePhotos"></div>
+    </article>
+
+    <script type="module" src="assets/js/app.js"></script>
+  </body>
+</html>

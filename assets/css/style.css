@@ -11,7 +11,7 @@
   --clr-text: var(--clr-black);
   --clr-muted: color-mix(in srgb, var(--clr-text) 55%, transparent);
   --clr-line: color-mix(in srgb, var(--clr-text) 12%, transparent);
-  --ff-title: "Instrument Serif", "Times New Roman", serif;
+  --ff-title: "Fraunces", "Times New Roman", serif;
   --ff-body: "Fustat", system-ui, sans-serif;
   --ff-button: "Fustat", system-ui, sans-serif;
   --fs-display: clamp(2.5rem, 9.375vw + 0.625rem, 10rem);
@@ -54,7 +54,7 @@
 }
 
 html[lang="ru"] {
-  --ff-title: "Instrument Serif", "Times New Roman", serif;
+  --ff-title: "Fraunces", "Times New Roman", serif;
   --ff-body: "Fustat", system-ui, sans-serif;
 }
 
@@ -400,7 +400,8 @@ ul {
   text-align: center;
   font-family: var(--ff-title);
   font-size: var(--fs-xxl);
-  font-weight: 400;
+  font-weight: 500;
+  font-variation-settings: "opsz" 72, "SOFT" 50, "WONK" 0;
   letter-spacing: -0.02em;
   line-height: 0.9;
   pointer-events: none;
@@ -698,7 +699,7 @@ html.is-hero-cards .hero__labels {
   margin: 0;
   font-family: var(--ff-title);
   font-size: var(--fs-xl);
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: -0.02em;
   line-height: 1;
   max-width: var(--container-sm);
@@ -749,7 +750,7 @@ html.is-hero-cards .hero__labels {
   text-align: center;
   font-family: var(--ff-title);
   font-size: var(--fs-display);
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: -0.02em;
   line-height: 0.9;
   max-width: min(14ch, var(--container-lg));
@@ -884,7 +885,7 @@ html.is-hero-cards .hero__labels {
   margin: 0;
   font-family: var(--ff-title);
   font-size: var(--fs-xs);
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.25;
   letter-spacing: -0.02em;
   transition: transform 0.55s var(--ease);
@@ -949,7 +950,7 @@ html.is-hero-cards .hero__labels {
   margin: 0;
   font-family: var(--ff-title);
   font-size: var(--fs-m);
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: -0.02em;
   line-height: 1.05;
 }
@@ -979,7 +980,7 @@ html.is-hero-cards .hero__labels {
   margin: 0 0 0.75rem;
   font-family: var(--ff-title);
   font-size: clamp(1.5rem, 2vw, 2.1rem);
-  font-weight: 400;
+  font-weight: 500;
 }
 .sticky__content p,
 .sticky__content li {
@@ -1061,7 +1062,7 @@ html.is-hero-cards .hero__labels {
   margin: 0;
   font-family: var(--ff-title);
   font-size: var(--fs-display);
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: -0.03em;
   line-height: 0.95;
   max-width: 10ch;
@@ -1228,7 +1229,7 @@ html.is-hero-cards .hero__labels {
   margin: 0 0 1rem;
   font-family: var(--ff-title);
   font-size: clamp(1.5rem, 0.35vw + 1.42rem, 1.75rem);
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: -0.03em;
   line-height: 1.2;
 }
@@ -1286,7 +1287,7 @@ html.is-hero-cards .hero__labels {
   text-align: center;
   font-family: var(--ff-title);
   font-size: var(--fs-display);
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: -0.02em;
   line-height: 1;
   max-width: 12ch;
@@ -1600,7 +1601,7 @@ html.is-hero-cards .hero__labels {
   margin: 0 0 1rem;
   font-family: var(--ff-title);
   font-size: var(--fs-xxl);
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: -0.02em;
   line-height: 1;
 }
@@ -1708,7 +1709,7 @@ body.is-pick {
   margin: 0 0 1.25rem;
   font-family: var(--ff-title);
   font-size: var(--fs-xxl);
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: -0.02em;
   line-height: 1;
 }
@@ -2130,7 +2131,7 @@ body.is-page .case-page[hidden] {
   margin: 0;
   font-family: var(--ff-title);
   font-size: var(--fs-xxl);
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: -0.02em;
   line-height: 0.95;
 }
@@ -2160,7 +2161,7 @@ body.is-page .case-page[hidden] {
   margin: 0 0 0.85rem;
   font-family: var(--ff-title);
   font-size: var(--fs-s);
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .detail-grid p,
@@ -2208,7 +2209,7 @@ body.is-page .case-page[hidden] {
   margin: 0;
   font-family: var(--ff-title);
   font-size: var(--fs-xl);
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .studio-people {
@@ -2233,7 +2234,7 @@ body.is-page .case-page[hidden] {
   margin: 0.85rem 0 0.2rem;
   font-family: var(--ff-title);
   font-size: 1.5rem;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .studio-people p {

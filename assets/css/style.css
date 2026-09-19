@@ -705,10 +705,12 @@ html.is-hero-cards .hero__labels {
   text-wrap: pretty;
 }
 .intro p,
+.intro p.reveal,
+.intro p.reveal.is-in,
 .lede,
 .build article p {
   margin: 0 auto;
-  color: var(--clr-text);
+  color: #12110b;
   font-family: var(--ff-body);
   font-weight: 500;
   font-size: var(--fs-body-lg);
@@ -716,7 +718,11 @@ html.is-hero-cards .hero__labels {
   line-height: 1.6;
   max-width: var(--container-sm);
   text-wrap: pretty;
-  opacity: 1;
+}
+[data-theme="dark"] .intro p,
+[data-theme="dark"] .intro p.reveal,
+[data-theme="dark"] .intro p.reveal.is-in {
+  color: #f4efea;
 }
 .partner {
   background: var(--clr-off-white);

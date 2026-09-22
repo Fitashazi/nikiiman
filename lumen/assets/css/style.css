@@ -271,8 +271,14 @@ ul {
   border: 0;
   background: none;
   cursor: pointer;
-  font: inherit;
-  color: inherit;
+  font-family: var(--ff-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: -0.02rem;
+  line-height: 1.25;
+  color: var(--clr-text);
+  -webkit-appearance: none;
+  appearance: none;
 }
 .nav-main__trigger::after {
   content: "";
@@ -339,6 +345,9 @@ ul {
 [data-theme="dark"] .site-header .icon-btn,
 [data-theme="dark"] .site-header .lang-switcher {
   background: transparent;
+}
+[data-theme="dark"] .nav-main__menu {
+  background: var(--clr-dark-raised);
 }
 .pill-contact__icon {
   width: 2.25rem;

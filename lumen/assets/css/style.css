@@ -234,10 +234,12 @@ ul {
 }
 .nav-main {
   display: flex;
+  align-items: center;
   gap: 1.5rem;
 }
 /* Top-bar type: compact medium (Fustat 500), smaller than body */
 .nav-main a,
+.nav-main__trigger,
 .pill-contact,
 .lang-switcher {
   font-family: var(--ff-body);
@@ -247,13 +249,71 @@ ul {
   line-height: 1.25;
   color: var(--clr-text);
 }
-.nav-main a {
+.nav-main a,
+.nav-main__trigger {
   position: relative;
   opacity: 1;
   transition: opacity 0.2s ease;
 }
-.nav-main a:hover {
+.nav-main a:hover,
+.nav-main__trigger:hover {
   opacity: 0.6;
+}
+.nav-main__drop {
+  position: relative;
+}
+.nav-main__trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+.nav-main__trigger::after {
+  content: "";
+  width: 0.35rem;
+  height: 0.35rem;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg) translateY(-0.1rem);
+  opacity: 0.7;
+}
+.nav-main__drop.is-open .nav-main__trigger::after {
+  transform: rotate(225deg) translateY(-0.05rem);
+}
+.nav-main__menu {
+  position: absolute;
+  top: calc(100% + 0.65rem);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 13.5rem;
+  padding: 0.55rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  background: var(--clr-beige);
+  border-radius: 0.85rem;
+  box-shadow: 0 14px 36px color-mix(in srgb, var(--clr-black) 14%, transparent);
+  z-index: 30;
+}
+.nav-main__menu[hidden] {
+  display: none;
+}
+.nav-main__menu a {
+  display: block;
+  padding: 0.55rem 0.7rem;
+  border-radius: 0.55rem;
+  white-space: nowrap;
+  opacity: 1;
+}
+.nav-main__menu a:hover {
+  background: color-mix(in srgb, var(--clr-text) 6%, transparent);
+  opacity: 1;
 }
 .nav-main__cta {
   display: none;
@@ -1916,6 +1976,28 @@ body.is-pick {
     margin-top: 0.2rem;
     padding-top: 0.9rem;
     border-top: 1px solid var(--clr-line);
+  }
+  .site-header.is-open .nav-main__drop {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.45rem;
+  }
+  .site-header.is-open .nav-main__menu {
+    position: static;
+    transform: none;
+    min-width: 0;
+    width: 100%;
+    box-shadow: none;
+    background: transparent;
+    padding: 0 0 0 0.75rem;
+    gap: 0.35rem;
+  }
+  .site-header.is-open .nav-main__menu[hidden] {
+    display: flex;
+  }
+  .site-header.is-open .nav-main__trigger::after {
+    display: none;
   }
   .site-header.is-open .site-header__actions {
     display: contents;

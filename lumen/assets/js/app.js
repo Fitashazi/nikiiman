@@ -904,6 +904,41 @@ if (langToggle) {
   });
 }
 
+document.querySelectorAll("[data-nav-drop]").forEach((drop) => {
+  const trigger = drop.querySelector(".nav-main__trigger");
+  const menu = drop.querySelector(".nav-main__menu");
+  if (!trigger || !menu) return;
+
+  const close = () => {
+    drop.classList.remove("is-open");
+    trigger.setAttribute("aria-expanded", "false");
+    if (window.matchMedia("(min-width: 981px)").matches) menu.hidden = true;
+  };
+  const open = () => {
+    drop.classList.add("is-open");
+    trigger.setAttribute("aria-expanded", "true");
+    menu.hidden = false;
+  };
+
+  trigger.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (drop.classList.contains("is-open")) close();
+    else open();
+  });
+
+  drop.querySelectorAll(".nav-main__menu a").forEach((link) => {
+    link.addEventListener("click", () => close());
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!drop.contains(e.target)) close();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") close();
+  });
+});
+
 if (menuToggle && header) {
   menuToggle.addEventListener("click", () => {
     const open = header.classList.toggle("is-open");

@@ -704,8 +704,8 @@ function spinRing() {
       el.style.pointerEvents = facing > 0.22 ? "auto" : "none";
       const media = el.querySelectorAll(".hero__media");
       media.forEach((node) => {
-        /* Weichie minOpacity: 0 — hide backs, keep front arc crisp */
-        const opacity = facing > 0.08 ? Math.min(1, 0.15 + 0.85 * fade) : 0;
+        /* Hide backs; keep side cards vivid like Weichie */
+        const opacity = facing > 0.08 ? Math.min(1, 0.42 + 0.58 * fade) : 0;
         node.style.opacity = String(opacity);
       });
     });
@@ -945,7 +945,7 @@ if (touchForm) {
     const body = encodeURIComponent(
       `${c.fieldName}: ${data.get("name")}\n${c.fieldCompany}: ${data.get("company")}\n${c.fieldEmail}: ${data.get("email")}\n${c.fieldPhone}: ${data.get("phone") || "—"}\n\n${data.get("message")}`
     );
-    window.location.href = `mailto:studio@lumen-atelier.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:studio@nikiiman.com?subject=${subject}&body=${body}`;
     if (touchOk) touchOk.hidden = false;
   });
 }

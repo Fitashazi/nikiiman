@@ -1,4 +1,4 @@
-# LUMEN
+# Nikiman
 
 Standalone interiors-atelier site. This is its own project — not the portfolio, not Novera.
 
@@ -42,4 +42,4 @@ The homepage still switches EN / TR / RU. Inner pages are English first so you c
 
 ## Contact
 
-The form opens a mail draft to `studio@lumen-atelier.com`. Change that address in `contact.html` and the homepage footer when the studio address is final.
+The form opens a mail draft to `studio@nikiiman.com`. Change that address in `contact.html` and the homepage footer when the studio address is final.

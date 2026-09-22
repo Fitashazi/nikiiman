@@ -1,5 +1,5 @@
 /**
- * LUMEN work archive.
+ * Nikiman work archive.
  * Add a new project here, then duplicate work/_template.html as work/<id>.html
  * and set data-project="<id>" on <body>.
  */
@@ -14,10 +14,11 @@ export const PROJECTS = [
     lead: "A glass house that learned manners. Oak, ivy, and black steel for a stay that begins at the threshold.",
     images: [
       "assets/img/2/01.jpg",
+      "assets/img/2/02.jpg",
+      "assets/img/2/03.jpg",
       "assets/img/2/04.jpg",
       "assets/img/2/05.jpg",
-      "assets/img/2/03.jpg",
-      "assets/img/2/02.jpg",
+      "assets/img/2/06.jpg",
     ],
     brief:
       "A small hospitality house on the Golden Horn that had to feel like a private home and operate like a hotel. The first ten metres — door, light, desk — had to do most of the work.",
@@ -38,9 +39,11 @@ export const PROJECTS = [
     lead: "Strength, drawn like cinema. A night gym of linear light — a lane instead of a corridor.",
     images: [
       "assets/img/3/01.jpg",
-      "assets/img/3/04.jpg",
-      "assets/img/3/03.jpg",
       "assets/img/3/02.jpg",
+      "assets/img/3/03.jpg",
+      "assets/img/3/04.jpg",
+      "assets/img/3/06.jpg",
+      "assets/img/3/07.jpg",
     ],
     brief:
       "An athletic club that trains after dark. The brief was cinema, not fluorescent: a lane you walk into, not a corridor you endure.",

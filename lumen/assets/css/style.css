@@ -703,7 +703,7 @@ html.is-hero-cards .hero__labels {
   min-height: 0;
   box-sizing: border-box;
 }
-/* Compact band: equal space above/below Development partner */
+/* Compact band: equal space above/below Design partner */
 .intro:not(.partner) {
   justify-content: center;
   align-items: center;

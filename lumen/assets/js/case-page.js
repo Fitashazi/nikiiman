@@ -7,7 +7,7 @@ const project = PROJECTS.find((item) => item.id === id);
 function fill() {
   if (!project) return;
 
-  document.title = `${project.title} — LUMEN`;
+  document.title = `${project.title} — Nikiman`;
   const title = document.querySelector("[data-c-title]");
   const info = document.querySelector("[data-c-info]");
   const type = document.querySelector("[data-c-type]");

@@ -62,7 +62,13 @@ export const PROJECTS = [
     year: "2025",
     area: "42 m²",
     lead: "Water, framed. Marble and brass for a bath that is a room, not a fixture.",
-    images: ["assets/img/4/01.jpg", "assets/img/4/03.jpg", "assets/img/4/02.jpg"],
+    images: [
+      "assets/img/4/01.jpg",
+      "assets/img/4/02.jpg",
+      "assets/img/4/03.jpg",
+      "assets/img/4/04.jpg",
+      "assets/img/4/05.jpg",
+    ],
     brief:
       "A private bath in a house that already had too many rooms and not enough quiet. Water had to become a room you enter, not a fixture you use.",
     approach:
@@ -80,7 +86,12 @@ export const PROJECTS = [
     year: "2025",
     area: "180 m²",
     lead: "The first room. Oak, linen, and brass at the desk where the day begins.",
-    images: ["assets/img/5/01.jpg", "assets/img/5/03.jpg", "assets/img/5/02.jpg"],
+    images: [
+      "assets/img/5/01.jpg",
+      "assets/img/5/02.jpg",
+      "assets/img/5/03.jpg",
+      "assets/img/5/04.jpg",
+    ],
     brief:
       "A reception that had to work as a desk, a wait, and a first impression for a private office. The day had to begin in one room.",
     approach:

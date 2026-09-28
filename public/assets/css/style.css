@@ -1779,6 +1779,12 @@ html.is-hero-cards .hero__labels {
 .need:has([data-need-pills] span) .need__next {
   opacity: 1;
 }
+[data-theme="dark"] .need {
+  /* Weichie dark form: --clr-dark-raised, a step above the page */
+  background: #26241b;
+  color: #f4efea;
+  --clr-text: #f4efea;
+}
 [data-theme="dark"] .need__pills span {
   color: #f4efea;
 }

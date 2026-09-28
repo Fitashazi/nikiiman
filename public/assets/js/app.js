@@ -1245,8 +1245,8 @@ function spinRing() {
     const cameraZ = 8.6;
     const plane = 1.6;
     if (w <= 720) {
-      /* Same ring as the wider phone camera, framed closer so the photos read larger. */
-      fov = 28;
+      /* Same rotating ring, framed close enough that the front photo fills most of the phone width. */
+      fov = 22;
       ring = 4;
     } else if (w <= 768) {
       fov = 49;

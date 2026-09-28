@@ -1,5 +1,5 @@
-import { PROJECTS } from "./projects.js";
-import { COPY, currentLang } from "./i18n.js";
+import { PROJECTS } from "./projects.js?v=weichie99";
+import { COPY, currentLang } from "./i18n.js?v=weichie99";
 import { asset, page } from "./root.js";
 
 function copy() {
@@ -184,7 +184,7 @@ function mountHomeEnding(root = document) {
         </nav>
       </div>
       <div class="foot__grid reveal">
-        <p class="foot__blurb" data-i18n="footBlurb">Nikiman is an interiors atelier in Istanbul, Dubai and Tehran.</p>
+        <p class="foot__blurb" data-i18n="footBlurb">Nikiman is an interiors atelier at Adam Plaza, Yenigöl, Serik Cd. No: 86, 07230 Muratpaşa/Antalya.</p>
         <div class="foot__col">
           <h4 data-i18n="footStudio">Studio</h4>
           <a href="${page("work/")}" data-i18n="navProject">Project</a>

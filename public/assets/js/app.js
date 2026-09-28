@@ -1,5 +1,5 @@
-import { PROJECTS } from "./projects.js";
-import { COPY, currentLang, nextLang } from "./i18n.js?v=weichie93";
+import { PROJECTS } from "./projects.js?v=weichie99";
+import { COPY, currentLang, nextLang } from "./i18n.js?v=weichie99";
 import { asset, page } from "./root.js";
 
 const stage = document.getElementById("stage");

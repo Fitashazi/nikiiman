@@ -4,7 +4,7 @@ export default {
     if (url.pathname === "/favicon.ico") {
       url.hostname = "www.nikiiman.com";
       url.protocol = "https:";
-      url.pathname = "/tab-n.png";
+      url.pathname = "/n-circle.png";
       url.search = "";
       return new Response(null, {
         status: 302,

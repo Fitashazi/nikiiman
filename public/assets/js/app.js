@@ -1210,20 +1210,6 @@ function spinRing() {
   const CLICK_PX = 5;
   const reduced = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false;
   const shot = isShot();
-  const phoneQuery = window.matchMedia("(max-width: 720px)");
-  function isPhone() {
-    return phoneQuery.matches;
-  }
-  /* Flat cover: one large card, neighbors peeking from the edges. Desktop keeps the ring. */
-  function phoneFrame() {
-    const w = heroStage.clientWidth || window.innerWidth;
-    const card = Math.round(Math.min(w - 36, w * 0.88));
-    const cardH = Math.round(Math.min(window.innerHeight * 0.52, card * 1.18));
-    const scale = 0.9;
-    const peek = 14;
-    const offset = (card * scale) / 2 + w / 2 - peek;
-    return { card, cardH, scale, offset };
-  }
 
   let radius = 420;
   let drop = 0;
@@ -1277,20 +1263,6 @@ function spinRing() {
   }
 
   function layout() {
-    if (isPhone()) {
-      const frame = phoneFrame();
-      const hero = heroStage.closest(".hero");
-      if (hero) {
-        hero.style.setProperty("--card-w", `${frame.card}px`);
-        hero.style.setProperty("--card-h", `${frame.cardH}px`);
-        hero.style.setProperty("--hero-bend", "0px");
-      }
-      heroStage.style.perspective = "none";
-      cards.forEach((el, i) => {
-        el.dataset.base = String((i / n) * Math.PI * 2);
-      });
-      return;
-    }
     const frame = cameraFrame();
     radius = frame.radiusPx;
     drop = frame.drop;
@@ -1319,47 +1291,13 @@ function spinRing() {
     return best;
   }
 
-  function paintPhone() {
-    const frame = phoneFrame();
-    const step = (Math.PI * 2) / n;
-    stage.style.transform = "none";
-    cards.forEach((el) => {
-      let ang = Number(el.dataset.base) + rotation;
-      ang = Math.atan2(Math.sin(ang), Math.cos(ang));
-      const slides = ang / step;
-      const ad = Math.abs(slides);
-      const scale = 1 - Math.min(ad, 1) * (1 - frame.scale);
-      el.style.transform = `translate3d(${slides * frame.offset}px, 0, 0) scale(${scale})`;
-      el.style.zIndex = ad < 0.5 ? "5" : "2";
-      el.style.opacity = ad > 1.2 ? "0" : "1";
-      el.style.pointerEvents = ad < 0.45 ? "auto" : "none";
-      el.classList.toggle("is-front", ad < 0.45);
-      el.classList.toggle("is-side", ad >= 0.45 && ad <= 1.2);
-      el.querySelectorAll(".hero__media").forEach((node) => {
-        node.style.opacity = "";
-      });
-    });
-  }
-
   function paint() {
-    if (isPhone()) {
-      paintPhone();
-      const front = cards[frontIndex()];
-      const id = front?.dataset.id;
-      heroLabels?.querySelectorAll("button").forEach((btn) => {
-        const on = btn.dataset.heroId === id;
-        btn.classList.toggle("is-on", on);
-        btn.classList.toggle("is-active", on);
-      });
-      return;
-    }
     const lift = rise * (heroStage.clientHeight || 0);
     /* Tilt, then seat the front card on the stage center. No extra Z push. */
     stage.style.transform = `translate3d(0, ${drop + lift}px, 0) rotateX(13deg) rotateY(${(rotation * 180) / Math.PI}deg)`;
     const threshold = Math.cos(Math.PI / 3);
     cards.forEach((el) => {
       const facing = Math.cos(Number(el.dataset.base) + rotation);
-      el.classList.remove("is-front", "is-side");
       el.style.transform = `rotateY(${(Number(el.dataset.base) * 180) / Math.PI}deg) translateZ(${radius}px)`;
       el.style.opacity = "";
       el.style.zIndex = String(Math.round((facing + 1) * 100));
@@ -1418,14 +1356,14 @@ function spinRing() {
       if (u >= 1) {
         animating = false;
         rotation = animTo;
-        spin = reduced || isPhone() ? 0 : AUTO;
-        holdUntil = isPhone() ? Number.POSITIVE_INFINITY : now + HOLD_MS;
+        spin = reduced ? 0 : AUTO;
+        holdUntil = now + HOLD_MS;
       }
     } else if (dragging) {
       /* rotation updated in pointermove */
     } else if (now < holdUntil) {
-      if (!isPhone()) spin = reduced ? 0 : AUTO;
-    } else if (!overlaysOpen() && !reduced && !shot && !isPhone()) {
+      spin = reduced ? 0 : AUTO;
+    } else if (!overlaysOpen() && !reduced && !shot) {
       const damp = 0.94 ** (dt * 60);
       spin = AUTO + (spin - AUTO) * damp;
       if (Math.abs(spin - AUTO) < 0.001) spin = AUTO;
@@ -1449,7 +1387,7 @@ function spinRing() {
   });
   heroStage.addEventListener("pointerdown", (e) => {
     if (e.button && e.button !== 0) return;
-    if (!isPhone()) e.preventDefault();
+    e.preventDefault();
     dragging = true;
     moved = false;
     animating = false;
@@ -1460,36 +1398,20 @@ function spinRing() {
     lastPointer = performance.now();
     spin = 0;
     heroStage.classList.add("is-drag");
-    if (!isPhone()) {
-      try {
-        heroStage.setPointerCapture(e.pointerId);
-      } catch (_) {}
-    }
+    try {
+      heroStage.setPointerCapture(e.pointerId);
+    } catch (_) {}
   });
   heroStage.addEventListener("pointermove", (e) => {
     if (!dragging) return;
+    e.preventDefault();
     const dx = e.clientX - lastX;
-    const totalX = e.clientX - downX;
-    const totalY = e.clientY - downY;
-    if (isPhone() && !moved && Math.abs(totalY) > Math.abs(totalX) && Math.abs(totalY) > 8) {
-      dragging = false;
-      heroStage.classList.remove("is-drag");
-      return;
-    }
-    if (!isPhone() || Math.abs(totalX) > 6) e.preventDefault();
     lastX = e.clientX;
-    if (Math.hypot(totalX, totalY) > CLICK_PX) moved = true;
-    if (isPhone() && moved && e.pointerId != null) {
-      try {
-        heroStage.setPointerCapture(e.pointerId);
-      } catch (_) {}
-    }
+    if (Math.hypot(e.clientX - downX, e.clientY - downY) > CLICK_PX) moved = true;
     const now = performance.now();
     const dt = Math.max((now - lastPointer) / 1000, 0.001);
     lastPointer = now;
-    const step = (Math.PI * 2) / n;
-    const travel = isPhone() ? phoneFrame().offset : 0;
-    const dRot = travel ? (dx / travel) * step : dx * DRAG;
+    const dRot = dx * DRAG;
     rotation += dRot;
     spin = spin * (1 - VEL_BLEND) + (dRot / dt) * VEL_BLEND;
   });
@@ -1501,20 +1423,6 @@ function spinRing() {
       try {
         heroStage.releasePointerCapture(e.pointerId);
       } catch (_) {}
-    }
-    if (isPhone() && moved) {
-      const step = (Math.PI * 2) / n;
-      const raw = -rotation / step;
-      let index = Math.round(raw);
-      if (Math.abs(spin) > 1.2) index = spin < 0 ? Math.ceil(raw) : Math.floor(raw);
-      animFrom = rotation;
-      animTo = -index * step;
-      animStart = performance.now();
-      animDur = 420;
-      animating = true;
-      spin = 0;
-      holdUntil = 0;
-      return;
     }
     if (reduced || shot) {
       spin = 0;

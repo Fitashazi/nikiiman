@@ -2930,82 +2930,34 @@ body.is-pick {
     margin-left: auto;
   }
   .hero {
-    --card-w: min(88vw, calc(100vw - 2.25rem));
-    --card-h: min(52svh, 26rem);
-    --hero-stage-h: var(--card-h);
-    justify-content: flex-start;
-    align-items: center;
+    --card-w: min(14.5rem, 46vw);
+    --card-h: var(--card-w);
+    --hero-stage-h: min(clamp(19rem, 54svh, 27rem), calc(100svh - 10.5rem));
     min-height: 100svh;
-    padding-top: calc(4.35rem + env(safe-area-inset-top, 0px));
-    padding-bottom: calc(1.35rem + env(safe-area-inset-bottom, 0px));
-    gap: 1.15rem;
   }
   html.is-hero-cards .hero {
-    justify-content: flex-start;
-    padding-top: calc(4.35rem + env(safe-area-inset-top, 0px));
+    justify-content: flex-end;
+    padding-top: calc(3.75rem + env(safe-area-inset-top, 0px));
     padding-bottom: calc(1.35rem + env(safe-area-inset-bottom, 0px));
-    gap: 1.15rem;
+    gap: 0.85rem;
   }
   .hero__stage {
-    order: 1;
-    perspective: none;
-    perspective-origin: 50% 50%;
-    touch-action: pan-y;
-    height: var(--card-h);
+    perspective: 1300px;
+    perspective-origin: 50% 48%;
   }
-  .hero__track,
-  .hero__card {
-    transform-style: flat;
-  }
-  .hero__card {
-    border-radius: 1.35rem;
-    overflow: hidden;
-  }
-  .hero__card.is-front {
-    box-shadow: 0 16px 36px rgb(0 0 0 / 28%);
-  }
-  .hero__card.is-side {
-    filter: brightness(0.62);
-  }
-  .hero__media {
-    border-radius: 1.35rem;
-    clip-path: inset(0 round 1.35rem);
-    overflow: hidden;
-  }
-  .hero__media--back {
-    display: none;
-  }
-  .hero__strip {
-    transform: none;
+  .hero__title {
+    font-size: clamp(1.85rem, 9vw, 2.55rem);
+    width: min(18ch, calc(100% - 1.5rem));
+    white-space: normal;
   }
   .hero__labels {
-    order: 2;
-    gap: 0.7rem 1.05rem;
-    font-size: 0.9rem;
-    max-width: 22rem;
-    padding-inline: 1.15rem;
+    gap: 0.55rem 0.85rem;
+    font-size: 0.75rem;
+    max-width: 100%;
+    padding-inline: 0.75rem;
   }
   .hero__labels button {
-    gap: 0.4rem;
-  }
-  .hero__label-icon {
-    width: 1.15rem;
-    height: 1.15rem;
-  }
-  .hero__title,
-  html.is-hero-cards .hero__title {
-    order: 3;
-    position: relative;
-    top: auto;
-    left: auto;
-    width: min(16ch, calc(100% - 2rem));
-    max-width: 16ch;
-    font-size: clamp(2.35rem, 11.2vw, 3.45rem);
-    line-height: 0.92;
-    white-space: normal;
-    transform: none;
-    opacity: 1;
-    visibility: visible;
+    gap: 0.35rem;
   }
   .work__grid {
     grid-template-columns: 1fr;

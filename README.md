@@ -1,18 +1,38 @@
-# nikiiman — Coming Soon
+# Nikiman
 
-Temporary landing page for `nikiiman.com` while LUMEN is finished.
+This is the **Nikiman** interiors-atelier website.
 
-## Local preview
+Folder name: **`nikiman`** (renamed from `lumen` so it stays clear).
+
+## Open it locally
 
 ```bash
-cd coming-soon
-python3 -m http.server 4175
+cd nikiman
+python3 -m http.server 4174
 ```
 
-Open http://127.0.0.1:4175/
+Then open http://127.0.0.1:4174/
 
-## Cloudflare Pages
+## Pages you can edit
 
-- **Root directory:** `coming-soon`
-- **Build command:** (empty)
-- **Branch:** `cursor/nikiiman-coming-soon-3932` (or `main` after merge)
+| File | What it is |
+| --- | --- |
+| `index.html` | Homepage: hero carousel, intro, latest work |
+| `work/index.html` | Full work list |
+| `work/orbis.html` | Casa Orbis case |
+| `work/nocturne.html` | Nocturne Athletic case |
+| `work/vena.html` | Vena Baths case |
+| `work/liminal.html` | Liminal Desk case |
+| `services.html` | Hospitality, wellness, private water |
+| `about.html` | Studio |
+| `contact.html` | Inquiry form |
+
+## How to change the work in detail
+
+1. **Copy and photos** live in `assets/js/projects.js`.
+2. **Look and type** live in `assets/css/style.css`.
+3. **Homepage motion / circle tilt** lives in `assets/js/app.js` (`const TILT = …`).
+
+## Contact
+
+The form opens a mail draft to `info@nikiiman.com`.

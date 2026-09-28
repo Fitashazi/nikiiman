@@ -2966,8 +2966,14 @@ body.is-pick {
   .work__aside {
     position: static;
     margin: 0 0 var(--work-callout-spacing);
-    max-width: none;
+    max-width: 15.5rem;
     text-align: left;
+    font-size: var(--fs-body-xs);
+    font-weight: 400;
+    line-height: 1.35;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: var(--clr-text);
   }
   .work__aside--bottom {
     margin: var(--work-callout-spacing) 0 0;

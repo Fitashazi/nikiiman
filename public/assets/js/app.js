@@ -1378,12 +1378,44 @@ function spinRing() {
     requestAnimationFrame(tick);
   }
 
-  layout();
-  paint();
-  requestAnimationFrame(tick);
-  window.addEventListener("resize", () => {
+  /*
+    cameraFrame() reads the stage box once. On a cold load the module can run
+    before the stylesheet is applied, so the stage is still a one-line box and
+    the ring is locked tiny. A refresh already has CSS, so that same read is
+    the right size. Wait for the styled box, and measure again if it changes
+    without a window resize.
+  */
+  let sizedW = -1;
+  let sizedH = -1;
+
+  function measure() {
+    if (getComputedStyle(heroStage).position !== "relative") return;
+    const w = heroStage.clientWidth;
+    const h = heroStage.clientHeight;
+    if (w <= 0 || h <= 0) return;
+    if (w === sizedW && h === sizedH) return;
+    sizedW = w;
+    sizedH = h;
     layout();
     paint();
+  }
+
+  measure();
+  if (typeof ResizeObserver === "function") {
+    new ResizeObserver(() => measure()).observe(heroStage);
+  }
+  requestAnimationFrame(function arm(now) {
+    if (sizedW < 0) {
+      measure();
+      requestAnimationFrame(arm);
+      return;
+    }
+    tick(now);
+  });
+  window.addEventListener("resize", () => {
+    sizedW = -1;
+    sizedH = -1;
+    measure();
   });
 
   heroStage.addEventListener("dragstart", (e) => {
